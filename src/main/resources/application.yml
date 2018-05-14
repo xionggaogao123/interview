@@ -1,0 +1,28 @@
+logging:
+  file: ${user.home}/logs/interview.log
+  level.*: INFO
+  level: DEBUG
+
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: >
+      com.keven.interview.domain
+
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/interview?useUnicode=true&characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+      username: root
+      password:
+      tomcat.test-on-borrow: false
+      tomcat.test-while-idle: true
+      tomcat.time-between-eviction-runs-millis: 3600000
+  application:
+    name: test
+  profiles:
+    include: actuator
+
+server:
+  context-path: /
+  port: 9002
