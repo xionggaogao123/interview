@@ -2,7 +2,6 @@ package com.keven.interview.list;
 
 
 import org.assertj.core.util.Lists;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -49,7 +48,7 @@ public class ListPaging {
     }
 
     public static void main(String[] args) {
-        listPaging(10, 20);
+        listPaging(1, 20);
     }
 
 }
