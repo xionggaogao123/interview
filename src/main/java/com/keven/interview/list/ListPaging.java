@@ -4,6 +4,7 @@ package com.keven.interview.list;
 import org.assertj.core.util.Lists;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,11 +16,11 @@ public class ListPaging {
      */
     public static void listPaging(Integer pageNo, Integer pageSize) {
         List<Integer> list = Lists.newArrayList();
-        for (int i =1; i<= 192 ; i++) {
+        for (int i =1; i<= 928 ; i++) {
             list.add(i);
         }
 
-        int totalCount = list.size();
+        /*int totalCount = list.size();
 
         int pageNum = getTotalPage(totalCount, pageSize);
 
@@ -36,7 +37,11 @@ public class ListPaging {
                  subList= list.subList((pageNo - 1) * pageSize, pageSize*(pageNo));
                 System.out.println(subList);
             }
-        }
+        }*/
+
+        int endIndex = (pageNo * pageSize) < list.size() ? pageNo * pageSize : list.size();
+        List<Integer> pagedStrs = new ArrayList<>(list.subList((pageNo - 1) * pageSize, endIndex));
+        System.out.println(pagedStrs);
     }
 
     public static int getTotalPage(Integer totalCount, Integer pageSize) {
@@ -48,7 +53,7 @@ public class ListPaging {
     }
 
     public static void main(String[] args) {
-        listPaging(1, 20);
+        listPaging(47, 20);
     }
 
 }

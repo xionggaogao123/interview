@@ -15,8 +15,6 @@ import javax.annotation.Resource;
 @Service
 public class MemcacheManager {
 
-    @Resource
-    private MemcachedClient client;
 
 
 
