@@ -12,6 +12,10 @@ public class TestFlow {
 
     public static void main(String[] args) {
         float a = (float) 2.4;
+
+        char b =  '中';
+
+        System.out.println(b);
     }
 
 
